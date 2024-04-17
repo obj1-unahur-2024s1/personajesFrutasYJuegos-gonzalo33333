@@ -2,12 +2,14 @@ import frutas.*
 import juegos.*
 
 object martin {
-	var energia = 1
+	var energia = 100
 	var actividadDelDia = 0
 	var tieneHambre = false
-	var despensa = vasoDeAgua
+	var despensa = vasoDeagua
 	
-	
+	method actividadDelDia() = actividadDelDia
+	method tieneHambre() = tieneHambre
+	method energia() = energia
 	method esFeliz(){
 		return energia > 80 or (actividadDelDia >= 2 and not(tieneHambre)) 		
 	}
@@ -17,7 +19,7 @@ object martin {
 	method comer(){
 		energia += despensa.energiaQueAporta()
 		tieneHambre = false
-		despensa = vasoDeAgua
+		despensa = vasoDeagua
 	}
 	
 	method hacerDeporte(deporte, tiempo){
